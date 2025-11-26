@@ -8,8 +8,8 @@
 
 /* Begin PBXFileReference section */
                 ED115BAB2ED717EC0053D53F /* Power Plan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Power Plan.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-               F9315A3F2F012A2E00AC58B1 /* Localizable.strings (English) */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Localizable.strings; path = "Power Plan/en.lproj/Localizable.strings"; sourceTree = "<group>"; };
-               F9315A402F012A2E00AC58B1 /* Localizable.strings (Dutch) */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Localizable.strings; path = "Power Plan/nl.lproj/Localizable.strings"; sourceTree = "<group>"; };
+              F9315A3F2F012A2E00AC58B1 /* Localizable.strings (English) */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Localizable.strings; path = "Power Plan/en.lproj/Localizable.strings"; sourceTree = SOURCE_ROOT; };
+              F9315A402F012A2E00AC58B1 /* Localizable.strings (Dutch) */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Localizable.strings; path = "Power Plan/nl.lproj/Localizable.strings"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXBuildFile section */
