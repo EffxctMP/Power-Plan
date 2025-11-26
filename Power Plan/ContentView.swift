@@ -8,7 +8,28 @@
 import SwiftUI
 import Foundation
 
+enum AppearanceMode: String, CaseIterable, Identifiable {
+    case system = "System"
+    case light = "Light"
+    case dark = "Dark"
+
+    var id: String { rawValue }
+
+    var colorScheme: ColorScheme? {
+        switch self {
+        case .system:
+            return nil
+        case .light:
+            return .light
+        case .dark:
+            return .dark
+        }
+    }
+}
+
 struct ContentView: View {
+    @AppStorage("appearanceMode") private var appearanceMode: AppearanceMode = .system
+
     var body: some View {
         TabView {
             DashboardView()
@@ -20,10 +41,13 @@ struct ContentView: View {
                     Label("Reference", systemImage: "book")
                 }
         }
+        .preferredColorScheme(appearanceMode.colorScheme)
     }
 }
 
 struct DashboardView: View {
+    @AppStorage("appearanceMode") private var appearanceMode: AppearanceMode = .system
+
     var body: some View {
         NavigationStack {
             ScrollView {
@@ -46,6 +70,16 @@ struct DashboardView: View {
                                 .frame(maxWidth: .infinity)
                                 .padding()
                                 .background(Color.accentColor.opacity(0.1))
+                            .cornerRadius(12)
+                        }
+                    }
+                    CalculationCard(title: "Wattage", subtitle: "Estimate watts from voltage, amps, and power factor", icon: "w.circle") {
+                        NavigationLink(destination: WattCalculatorView()) {
+                            Text("Open Watt Calculator")
+                                .font(.headline)
+                                .frame(maxWidth: .infinity)
+                                .padding()
+                                .background(Color.accentColor.opacity(0.1))
                                 .cornerRadius(12)
                         }
                     }
@@ -63,6 +97,13 @@ struct DashboardView: View {
                 .padding()
             }
             .navigationTitle("Power Plan")
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    NavigationLink(destination: SettingsView(appearanceMode: $appearanceMode)) {
+                        Label("Settings", systemImage: "gearshape")
+                    }
+                }
+            }
         }
     }
 }
@@ -291,6 +332,62 @@ struct PowerCalculatorView: View {
     }
 }
 
+struct WattCalculatorView: View {
+    @State private var voltage: String = "230"
+    @State private var current: String = "10"
+    @State private var powerFactor: Double = 1.0
+    @State private var result: String = ""
+
+    var body: some View {
+        Form {
+            Section(header: Text("Load")) {
+                NumericField(title: "Voltage (V)", value: $voltage)
+                NumericField(title: "Current (A)", value: $current)
+                HStack {
+                    VStack(alignment: .leading) {
+                        Text("Power factor")
+                            .font(.subheadline)
+                        Text(String(format: "%.2f", powerFactor))
+                            .foregroundStyle(.secondary)
+                    }
+                    Slider(value: $powerFactor, in: 0.5...1.0, step: 0.01)
+                }
+            }
+
+            Section {
+                Button(action: computeWattage) {
+                    Label("Calculate Watts", systemImage: "wand.and.sparkles")
+                        .frame(maxWidth: .infinity)
+                }
+            }
+
+            Section(header: Text("Results")) {
+                if result.isEmpty {
+                    Text("Enter voltage and current, then calculate.")
+                } else {
+                    Text(result)
+                }
+            }
+        }
+        .navigationTitle("Wattage")
+    }
+
+    private func computeWattage() {
+        guard let voltageValue = Double(voltage), let currentValue = Double(current) else {
+            result = "Please enter valid numbers for voltage and current."
+            return
+        }
+
+        let watts = voltageValue * currentValue * powerFactor
+        let kilowatts = watts / 1000
+
+        result = [
+            String(format: "Real power: %.2f W (%.3f kW)", watts, kilowatts),
+            String(format: "Assuming PF: %.2f", powerFactor)
+        ].joined(separator: "\n")
+    }
+}
+
 struct VoltageDropView: View {
     @State private var lengthMeters: String = "30"
     @State private var loadCurrent: String = "16"
@@ -363,6 +460,27 @@ struct ReferenceView: View {
             }
         }
         .navigationTitle("Reference")
+    }
+}
+
+struct SettingsView: View {
+    @Binding var appearanceMode: AppearanceMode
+
+    var body: some View {
+        Form {
+            Section(header: Text("Appearance")) {
+                Picker("Theme", selection: $appearanceMode) {
+                    ForEach(AppearanceMode.allCases) { mode in
+                        Text(mode.rawValue).tag(mode)
+                    }
+                }
+                .pickerStyle(.segmented)
+                Text("Choose System to follow device appearance or force Light/Dark modes.")
+                    .font(.footnote)
+                    .foregroundStyle(.secondary)
+            }
+        }
+        .navigationTitle("Settings")
     }
 }
 
