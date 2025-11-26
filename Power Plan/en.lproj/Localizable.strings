@@ -1,0 +1,137 @@
+"appearance.system" = "System";
+"appearance.light" = "Light";
+"appearance.dark" = "Dark";
+
+"language.system" = "System";
+"language.english" = "English";
+"language.dutch" = "Dutch";
+
+"tab.calculators" = "Calculators";
+"tab.planning" = "Planning";
+"tab.reference" = "Reference";
+
+"nav.title" = "Power Plan";
+"nav.ohms" = "Ohm's Law";
+"nav.power" = "Power & Load";
+"nav.watt" = "Wattage";
+"nav.drop" = "Voltage Drop";
+"nav.protection" = "Protection";
+"nav.planning" = "Panel Planning";
+"nav.reference" = "Reference";
+"nav.settings" = "Settings";
+"nav.settings.button" = "Settings";
+
+"hero.title" = "Electrician Toolkit";
+"hero.subtitle" = "Advanced calculators for sizing loads, validating runs, and checking energy costs.";
+"hero.offline" = "Offline ready";
+"hero.formulas" = "Pro formulas";
+
+"card.ohms.title" = "Ohm's Law";
+"card.ohms.subtitle" = "Solve for voltage, current, resistance, or power";
+"card.ohms.button" = "Open Ohm's Law";
+
+"card.power.title" = "Power & Load";
+"card.power.subtitle" = "Single and three-phase power with power factor";
+"card.power.button" = "Open Power Calculator";
+
+"card.watt.title" = "Wattage";
+"card.watt.subtitle" = "Estimate watts from voltage, amps, and power factor";
+"card.watt.button" = "Open Watt Calculator";
+
+"card.protection.title" = "Protection";
+"card.protection.subtitle" = "Breaker and fuse sizing with fault checks";
+"card.protection.button" = "Open Protection";
+
+"card.planning.title" = "Load & Panel Planning";
+"card.planning.subtitle" = "Service sizing with demand and spares";
+"card.planning.button" = "Open Planning";
+
+"card.drop.title" = "Voltage Drop";
+"card.drop.subtitle" = "Estimate drop based on conductor and load";
+"card.drop.button" = "Open Voltage Drop";
+
+"section.inputs" = "Inputs";
+"section.results" = "Results";
+"section.circuit" = "Circuit";
+"section.load" = "Load";
+"section.run" = "Run";
+"section.appearance" = "Appearance";
+"section.language" = "Language";
+
+"ohms.prompt" = "Provide any two values to solve the rest.";
+"ohms.validation" = "Enter at least two known values.";
+"ohms.result.voltage" = "Voltage: %@";
+"ohms.result.current" = "Current: %@";
+"ohms.result.resistance" = "Resistance: %@";
+"ohms.result.power" = "Power: %@";
+"ohms.button.calculate" = "Calculate";
+
+"power.phase" = "Phase";
+"power.singlePhase" = "Single-phase";
+"power.threePhase" = "Three-phase";
+"power.factor" = "Power factor";
+"power.button.estimate" = "Estimate Power";
+"power.prompt" = "Enter circuit details and tap Estimate.";
+"power.validation" = "Please enter valid voltage and current.";
+"power.result.power" = "Power: %.2f W (%.2f kW)";
+"power.result.breaker" = "Recommended breaker: %.2f A";
+"power.result.apparent" = "Apparent power: %.2f VA";
+
+"watt.button.calculate" = "Calculate Watts";
+"watt.prompt" = "Enter voltage and current, then calculate.";
+"watt.validation" = "Please enter valid numbers for voltage and current.";
+"watt.result.real" = "Real power: %.2f W (%.3f kW)";
+"watt.result.pf" = "Assuming PF: %.2f";
+
+"drop.button.estimate" = "Estimate Drop";
+"drop.prompt" = "Enter parameters to estimate voltage drop.";
+"drop.validation" = "Please provide valid numeric values.";
+"drop.result.voltage" = "Estimated drop: %.2f V";
+"drop.result.percent" = "Percentage of supply: %.2f%%";
+"drop.result.resistance" = "Loop resistance: %.3f Ω";
+
+"protection.inputs" = "Protective device";
+"protection.type" = "Load type";
+"protection.type.resistive" = "Resistive";
+"protection.type.motor" = "Motor";
+"protection.inrush" = "Inrush multiplier";
+"protection.fault" = "Available fault current (kA)";
+"protection.button" = "Recommend protection";
+"protection.result" = "Breaker: %.1f A\nFuse: %.1f A time-delay\nProspective Ics: %.2f kA";
+"protection.tip" = "Enter running amps, tweak inrush for motors, and list available fault current to gauge margin.";
+
+"planning.section" = "Service planning";
+"planning.demand" = "Demand factor";
+"planning.continuous" = "Continuous load (kW)";
+"planning.nonContinuous" = "Non-continuous load (kW)";
+"planning.voltage" = "Service voltage (V)";
+"planning.spare" = "Spare circuits: %d";
+"planning.button" = "Plan panel";
+"planning.result" = "Calculated load: %.1f A\nRecommend main: %.0f A\nSpare headroom: %d circuits";
+
+"badge.offline" = "Offline ready";
+"badge.formulas" = "Pro formulas";
+
+"settings.theme.description" = "Choose System to follow device appearance or force Light/Dark modes.";
+"settings.theme.label" = "Theme";
+"settings.language.label" = "App language";
+"settings.language.description" = "Switch to Dutch to view the interface in Nederlands.";
+
+"reference.copper" = "Copper resistivity: 0.0175 Ω·mm²/m";
+"reference.pfRange" = "Power factor typical range: 0.8 - 1.0";
+"reference.multiplier" = "3ϕ power multiplier: √3";
+"reference.quick" = "Quick constants";
+"reference.tips" = "Usage tips";
+"reference.tip.ohms" = "• Use at least two known values in Ohm's Law to solve the circuit.";
+"reference.tip.breaker" = "• Power calculator suggests a breaker sized at 125% of load current.";
+"reference.tip.drop" = "• Voltage drop assumes copper conductors at 20°C with round-trip length.";
+"reference.tip.planning" = "• Apply demand factors to continuous/non-continuous loads to right-size the main.";
+
+"field.voltage" = "Voltage (V)";
+"field.current" = "Current (A)";
+"field.resistance" = "Resistance (Ω)";
+"field.power" = "Power (W)";
+"field.length" = "One-way length (m)";
+"field.loadCurrent" = "Load current (A)";
+"field.supplyVoltage" = "Supply voltage (V)";
+"field.conductorArea" = "Conductor area: %.1f mm²";
