@@ -7,8 +7,14 @@
 	objects = {
 
 /* Begin PBXFileReference section */
-		ED115BAB2ED717EC0053D53F /* Power Plan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Power Plan.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+                ED115BAB2ED717EC0053D53F /* Power Plan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Power Plan.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+                F9315A3F2F012A2E00AC58B1 /* Localizable.strings (English) */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Localizable.strings; path = "en.lproj/Localizable.strings"; sourceTree = "<group>"; };
+                F9315A402F012A2E00AC58B1 /* Localizable.strings (Dutch) */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Localizable.strings; path = "nl.lproj/Localizable.strings"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXBuildFile section */
+                F9315A422F012A2E00AC58B1 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F9315A412F012A2E00AC58B1 /* Localizable.strings */; };
+/* End PBXBuildFile section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		ED115BAD2ED717EC0053D53F /* Power Plan */ = {
@@ -32,6 +38,7 @@
 		ED115BA22ED717EC0053D53F = {
 			isa = PBXGroup;
 			children = (
+				F9315A412F012A2E00AC58B1 /* Localizable.strings */,
 				ED115BAD2ED717EC0053D53F /* Power Plan */,
 				ED115BAC2ED717EC0053D53F /* Products */,
 			);
@@ -91,6 +98,7 @@
 			knownRegions = (
 				en,
 				Base,
+				nl,
 			);
 			mainGroup = ED115BA22ED717EC0053D53F;
 			minimizedProjectReferenceProxies = 1;
@@ -109,6 +117,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F9315A422F012A2E00AC58B1 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -119,10 +128,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F9315A422F012A2E00AC58B1 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		F9315A412F012A2E00AC58B1 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F9315A3F2F012A2E00AC58B1 /* Localizable.strings (English) */,
+				F9315A402F012A2E00AC58B1 /* Localizable.strings (Dutch) */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		ED115BB42ED717EE0053D53F /* Debug */ = {
